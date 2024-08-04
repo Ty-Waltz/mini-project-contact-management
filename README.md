@@ -1,6 +1,6 @@
 # -Welcome to the 'Contact Management System'- 
 ## -Here i'll explain, step by step, how everything works-
-### -The system will begin by showing you the menu with all the tasks avalible-
+### -The system will begin by showing you the menu with all the tasks available-
 
 Function 1. (Adding a contact)   
 -Enter a new contact into the system     
