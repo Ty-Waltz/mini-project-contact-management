@@ -77,8 +77,14 @@ def delete_contact():
     delete = user_input("Enter the email of the contact you would you like to delete: ", r"^[\w\.-]+@[\w\.-]+$")
     if delete not in contacts:
         print("Contact does not exist")
-    del contacts[delete]
-    print("Contact deleted successfully")
+        return
+    elif delete in contacts:
+        choice = user_input(f"Is this the contact you would like to delete? {contacts[delete]} (yes/no): ", r"^(yes|no)$").lower()
+        if choice == "yes":
+            del contacts[delete]
+            print("Contact deleted successful")
+        elif choice == "no":
+            print("Deletion canceled")
    
 def search_contact(): #Re-wrote this function so you can search using any info in the contact
     search = user_input("Enter any details of the contact you would like to display: ").strip().lower()
