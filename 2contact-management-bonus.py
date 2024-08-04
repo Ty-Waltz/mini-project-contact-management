@@ -34,7 +34,7 @@ def add_contact():
     phone = user_input("Enter contact phone number: ", r"^\+?[1-9]\d{1,14}$")
     address = user_input("Enter contact's address: ")
     notes = user_input("Enter any additional notes: ")
-    category = user_input("Enter the category for your contact: ")
+    category = user_input("Enter the category for your contact: ") #Added a new category here and all other functions that need it
 
     contacts[email] = {
         "Name": name,
@@ -80,7 +80,7 @@ def delete_contact():
     del contacts[delete]
     print("Contact deleted successfully")
    
-def search_contact():
+def search_contact(): #Re-wrote this function so you can search using any info in the contact
     search = user_input("Enter any details of the contact you would like to display: ").strip().lower()
     results = False
     
@@ -97,7 +97,7 @@ def search_contact():
             print(f"Address: {details['Address']}")
             print(f"Notes: {details['Notes']}")
             print(f"Category: {details['Category']}")
-            results = True
+            results = True 
     if not results:
         print("Results not found")
 
@@ -136,7 +136,7 @@ def import_file():
             contact = content.split("\n\n")
             for entry in contact:
                 lines = entry.split("\n")
-                if len(lines) < 6: 
+                if len(lines) < 6:   #Adjusted the import to handle the new category
                     print(f"Skipping malformed entry: {entry}")
                     continue
                 
@@ -155,9 +155,7 @@ def import_file():
                 }
         print(f"Contacts imported from {filename}")
     except FileNotFoundError:
-        print(f"File {filename} not found.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"File {filename} not found.")   
 
 while True:
     print_menu()
