@@ -32,7 +32,7 @@ particular detail, just hit enter(Leave it blank) and it will not change
 -This will prompt you to type in a file you would like to view
 -If a file name is that you input does not exist the system will let you know it does not exist  
 ### Function 8. (Quit Program)  
--This function will simply end the System Management program
+-This function will simply end the Contact Management program
 
 
 
